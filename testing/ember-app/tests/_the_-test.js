@@ -4,12 +4,10 @@ import { initialize } from 'my-addon/instance-initializers/test-initializer';
 
 module('The Test', function () {
   test('did initializer laod?', function (assert) {
-    assert.ok(window.loaded);
-    assert.ok(window.initialized);
+    assert.strictEqual(window.i, 1);
 
     initialize();
 
-    assert.ok(window.loaded);
-    assert.ok(window.initialized);
+    assert.strictEqual(window.i, 2);
   });
 });
